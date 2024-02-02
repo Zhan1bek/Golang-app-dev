@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"github.com/gorilla/mux"
 	"net/http"
-	"tsis/package/player"
+	"tsis/tsis1/package/player"
 )
 
 var players = []player.Player{
