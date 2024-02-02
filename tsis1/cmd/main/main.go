@@ -4,7 +4,7 @@ import (
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
-	"tsis/tsis1/internal/handlers"
+	"tsis/internal/handlers"
 )
 
 func main() {
