@@ -2,7 +2,8 @@ package player
 
 type Player struct {
 	ID          string `json:"id"`
-	Name        string `json:"name"`
+	FirstName   string `json:"FirstName"`
+	LastName    string `json:"LastName"`
 	Age         int    `json:"age"`
 	Position    string `json:"position"`
 	Nation      string `json:"nation"`
