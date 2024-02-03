@@ -8,4 +8,5 @@ type Player struct {
 	Position    string `json:"position"`
 	Nation      string `json:"nation"`
 	ShirtNumber int    `json:"shirtNumber"`
+	PlayPeriod  string `json:"PlayPeriod"`
 }
