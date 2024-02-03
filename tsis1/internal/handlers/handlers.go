@@ -69,6 +69,26 @@ func GetPlayerByPosition(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// Таже самая операция как и в поиске по позиции
+func GetPlayerByNation(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	{
+		params := mux.Vars(r)
+		var PlayerByNation []player.Player
+		for _, item := range players {
+			if strings.EqualFold(item.Nation, params["nation"]) {
+				PlayerByNation = append(PlayerByNation, item)
+			}
+		}
+		if len(PlayerByNation) > 0 {
+			json.NewEncoder(w).Encode(PlayerByNation)
+		} else {
+			w.WriteHeader(http.StatusNotFound)
+			json.NewEncoder(w).Encode("No players found on this nation")
+		}
+	}
+}
+
 func HealthCheck(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.Write([]byte("API is up and running - developed by AI"))
